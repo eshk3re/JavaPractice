@@ -44,8 +44,8 @@ public class Main {
             }
 
             var graph = ChartFactory.createBarChart("График по показателю экономики", "Страна", "ВВП", dataset);
-            ChartUtils.saveChartAsPNG(new File("graph.jpg"), graph, 1920, 1080);
-            System.out.println("\n№1. Графики по показателю экономики сформирован в файл graph.jpg");
+            ChartUtils.saveChartAsPNG(new File("graph.png"), graph, 1920, 1080);
+            System.out.println("\n№1. Графики по показателю экономики сформирован в файл graph.png");
 
         } catch (SQLException | IOException e) {
             handleException(e);
