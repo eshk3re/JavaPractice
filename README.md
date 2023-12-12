@@ -397,7 +397,7 @@ public class Main {
 
             var graph = ChartFactory.createBarChart("График по показателю экономики", "Страна", "ВВП", dataset);
             ChartUtils.saveChartAsPNG(new File("graph.png"), graph, 1920, 1080);
-            System.out.println("\n№1. Графики по показателю экономики сформирован в файл graph.png");
+            System.out.println("\n№1. График по показателю экономики сформирован в файл graph.png");
 
         } catch (SQLException | IOException e) {
             handleException(e);
@@ -436,5 +436,10 @@ public class Main {
 
 ### 5. Итоговый вывод:
 
-![image](https://github.com/eshk3re/JavaProjectN1/assets/105351013/90b6dfae-253f-4705-aa37-508c8d44d97e)
+![image](https://github.com/eshk3re/JavaProjectN1/assets/105351013/c2ee2597-74a0-46ab-8d1b-eeadc820d852)
+
                                                                                                     
+#### График по показателю экономики (1 задание)
+
+
+![graph](https://github.com/eshk3re/JavaProjectN1/assets/105351013/85997ad4-ea40-41b8-b941-dd7504af95a1)
