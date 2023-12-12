@@ -88,4 +88,22 @@
     // Представление данных о качестве жизни
     public record Life(Country country, double family, double health, double freedom, double trust, double generosity) {}
 
+### 2. Распарсим данные из CSV-файла с помощью библиотеки OpenCSV
 
+Создадим класс для чтения данных из CSV-файла и создания объектов Country на основе этих данных
+
+#### CSV.java
+
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
+// Класс для чтения данных из CSV-файла и создания объектов Country
+    
+    
