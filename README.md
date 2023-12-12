@@ -443,3 +443,6 @@ public class Main {
 
 
 ![graph](https://github.com/eshk3re/JavaProjectN1/assets/105351013/85997ad4-ea40-41b8-b941-dd7504af95a1)
+
+
+#
