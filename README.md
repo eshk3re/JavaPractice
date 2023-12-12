@@ -7,8 +7,7 @@
 • Life 
 
 Создадим три соответсвующих файла:
-### Country.java
-
+#### Country.java
 
 
     public class Country {
@@ -73,7 +72,7 @@
     }
 
 
-### Happiness.java
+#### Happiness.java
 
 
 
