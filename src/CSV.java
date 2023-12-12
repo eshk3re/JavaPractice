@@ -8,18 +8,23 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+// Класс для чтения данных из CSV-файла и создания объектов Country
 public class CSV {
+
+    // Метод для разбора CSV-файла и создания списка объектов Country
     public static List<Country> parse() {
         List<Country> countries = new ArrayList<>();
 
         try (Reader reader = Files.newBufferedReader(Path.of("Показатель счастья по странам 2015.csv"));
              CSVReader csvReader = new CSVReader(reader)) {
 
+            // Пропуск заголовков CSV-файла
             csvReader.readNext();
 
             String[] args;
             while ((args = csvReader.readNext()) != null) {
                 try {
+                    // Создание объекта Country из данных строки CSV
                     Country country = createCountryFromArgs(args);
                     countries.add(country);
                 } catch (NumberFormatException e) {
@@ -34,6 +39,7 @@ public class CSV {
         return countries;
     }
 
+     // Приватный метод для создания объекта Country из массива аргументов
     private static Country createCountryFromArgs(String[] args) {
         return new Country(
                 args[0],
@@ -51,6 +57,7 @@ public class CSV {
         );
     }
 
+    // Методы обработки ошибок
     private static void handleParsingError(NumberFormatException e) {
         System.err.println("Ошибка парсинга: " + e.getMessage());
     }
