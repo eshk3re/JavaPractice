@@ -16,10 +16,12 @@ public class Main {
             var countries = CSV.parse();
             sql = new SQLHandler();
 
+            // Добавление стран в базу данных
             for (var country : countries) {
                 sql.addCountry(country);
             }
 
+            // Выполнение заданных SQL-запросов
             sql1();
             sql2();
             sql3();
@@ -29,6 +31,7 @@ public class Main {
         }
     }
 
+    // Метод для формирования графика по показателю экономики и сохранения его в файл
     private static void sql1() {
         try {
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
@@ -49,6 +52,7 @@ public class Main {
         }
     }
 
+    // Метод для получения страны с самым высоким показателем экономики
     private static void sql2() {
         try {
             System.out.println("\n№2. Страна с самым высоким показателем экономики среди \"Latin America and Caribbean\" и \"Eastern Asia\": "
@@ -59,6 +63,7 @@ public class Main {
         }
     }
 
+    // Метод для получения страны с самыми средними показателями
     private static void sql3() {
         try {
             System.out.println("\n№3. Страна с \"самыми средними показателями\" среди \"Western Europe\" и \"North America\": "
@@ -69,6 +74,7 @@ public class Main {
         }
     }
 
+    // Обработка исключений
     private static void handleException(Exception e) {
         System.err.println("Ошибка выполнения программы: " + e.getMessage());
         e.printStackTrace();
