@@ -8,7 +8,9 @@
 
 Создадим три соответсвующих файла:
 ### Country.java
+
 '''
+
 public class Country {
 
     private static int countriesCount = 0;
@@ -69,16 +71,23 @@ public class Country {
     public int getId() {return id;}
 
 }
+
 '''
 
 ### Happiness.java
+
 '''
+
 // Представление данных о счастье
 public record Happiness(Country country, int rank, double score) {}
+
 '''
 
 ### Life.java
+
 '''
+
 // Представление данных о качестве жизни
 public record Life(Country country, double family, double health, double freedom, double trust, double generosity) {}
+
 '''
