@@ -9,7 +9,6 @@
 Создадим три соответсвующих файла:
 ### Country.java
 
-'''
 
 public class Country {
 
