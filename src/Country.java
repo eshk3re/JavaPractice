@@ -11,10 +11,11 @@ public class Country {
     private final double economy;
     private final double dystopiaResidual;
 
-
+    // Конструктор класса Country
     public Country(String country_name, String region, int happinessRank, double happinessScore,
                    double standardError, double economy, double family, double health, double freedom,
                    double trust, double generosity, double dystopiaResidual) {
+        // Инициализация полей объекта Country
         this.id = countriesCount++;
         this.country_name = country_name;
         this.region = region;
@@ -25,6 +26,7 @@ public class Country {
         this.dystopiaResidual = dystopiaResidual;
     }
 
+    // Методы для получения значений полей объекта Country
     public String getCountryName() {
         return country_name;
     }
