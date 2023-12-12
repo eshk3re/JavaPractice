@@ -2,9 +2,9 @@
 
 ## 1. Данные из CSV-файла можно поделить на три класса:
 
-• Country__ 
-• Happiness__ 
-• Life__ 
+• Country <br /> 
+• Happiness <br />
+• Life <br />
 
 Создадим три соответсвующих файла
 #### Country.java
