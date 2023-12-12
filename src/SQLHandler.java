@@ -14,6 +14,7 @@ public class SQLHandler {
     private final Connection connection;
     private final Statement statement;
 
+    // Конструктор класса для установления соединения с базой данных SQLite и создания таблиц
     public SQLHandler() throws SQLException {
         SQLiteConfig config = new SQLiteConfig();
         config.enforceForeignKeys(true);
@@ -22,6 +23,7 @@ public class SQLHandler {
         createTables();
     }
 
+    // Методы для создания таблиц в базе данных
     private void createTables() throws SQLException {
         createTable("country", """
             id INTEGER PRIMARY KEY,
@@ -60,6 +62,7 @@ public class SQLHandler {
         statement.execute(sql);
     }
 
+    // Метод для добавления страны в базу данных
     public void addCountry(Country country) throws SQLException {
 
         addEntity("happiness", country.getHappiness());
@@ -85,6 +88,7 @@ public class SQLHandler {
         }
     }
 
+    // Метод для добавления записи с показателями счастья в базу данных
     private void addEntity(String tableName, Happiness happiness) throws SQLException {
         var query = String.format("""
             INSERT OR IGNORE INTO %s(
@@ -100,6 +104,7 @@ public class SQLHandler {
         }
     }
 
+    // Метод для добавления записи с показателями качества жизни в базу данных
     private void addEntity(String tableName, Life life) throws SQLException {
         var query = String.format("""
             INSERT OR IGNORE INTO %s(
@@ -118,6 +123,7 @@ public class SQLHandler {
         }
     }
 
+    // Определение страны с самым высоким показателем экономики
     public String getCountryWithHigherEconomy() throws SQLException {
         var query = """
             SELECT country_name, economy FROM country
@@ -130,6 +136,7 @@ public class SQLHandler {
         }
     }
 
+    // Определение страны с самыми средними показателями
     public String getCountryWithAvg() throws SQLException {
         List<String> countryByAvg = new ArrayList<>();
         var query = """
@@ -149,6 +156,7 @@ public class SQLHandler {
         }
     }
 
+    // Получение карты стран и их показателей экономики
     public Map<String, Double> getCountriesEconomy() throws SQLException {
         Map<String, Double> economyByCountry = new HashMap<>();
         var query = """
